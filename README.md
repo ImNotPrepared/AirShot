@@ -13,6 +13,10 @@ Access the data and annotations through the following link:
 Access the pre-trained checkpoints and data through the following link:
 [Pre-trained Checkpoints](https://drive.google.com/file/d/1T-Vrkv42HjcL0RDfJRnbaMuLy74juBVl/view?usp=sharing)
 
+## TODO
+- [x] Release SubT Dataset
+- [x] Release Pre-trained Checkpoints
+- [ ] Release Code(In Organization)
 
 ## Dataset Preparation(Credit: Bowen Li)
 We provide official implementation here to reproduce the results **w/o** fine-tuning of ResNet101 backbone on:
