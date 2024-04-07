@@ -4,6 +4,66 @@ Few-shot object detection has drawn increasing attention in the field of robotic
 
 
 
+
+## Dataset Preparation(Credit: Bowen Li)
+We provide official implementation here to reproduce the results **w/o** fine-tuning of ResNet101 backbone on:
+- [x] COCO-2017 validation
+- [x] VOC-2012 validation dataset
+
+### 1. Download official datasets
+
+[MS COCO 2017](https://cocodataset.org/#home)
+
+[PASCAL VOC](http://host.robots.ox.ac.uk/pascal/VOC/)
+
+[COCO format VOC annotations](https://s3.amazonaws.com/images.cocodataset.org/external/external_PASCAL_VOC.zip)
+
+Expected dataset Structure:
+
+```shell
+coco/
+  annotations/
+    instances_{train,val}2017.json
+    person_keypoints_{train,val}2017.json
+  {train,val}2017/
+```
+
+```shell
+VOC20{12}/
+  annotations/
+  	json files
+  JPEGImages/
+```
+
+### 2. Generate supports 
+
+Download and unzip support (COCO json files) [MEGA](https://mega.nz/file/QEETwCLJ#A8m0R7NhJ-MUNuT1fhzEgRIg6t5R69u5rAaBHTsqgUw)/[BaiduNet](https://pan.baidu.com/s/1cFtwrWAwTotwZKbXYyzjEA)(pwd:1134) in
+
+```shell
+datasets/
+  coco/
+    new_annotations/
+```
+
+Download and unzip support (VOC json files) [MEGA](https://mega.nz/file/BBcjjYwY#1S3Utg99D_WyfzN5qq0UfeuFrlh7Eum2jZs9U7GHhJY)/[BaiduNet](https://pan.baidu.com/s/1vPZmKKue4CAZQVzOnBUs-A)(pwd:1134) in
+
+```shell
+datasets/
+  voc/
+    new_annotations/
+```
+
+Run the script
+
+```shell
+cd datasets
+bash generate_support_data.sh
+```
+
+You may modify 4_gen_support_pool_10_shot.py line 190, 213, and 269 with different shots (default is 1 shot).
+
+
+
 ## DARPA Subterranean (SubT) Dataset for Few-shot Object Detection
 Access the data and annotations through the following link:
 [Dataset](https://drive.google.com/drive/folders/1KoFmW8W2biI3FOEREe57tKVmYa6yupCW?usp=sharing)
