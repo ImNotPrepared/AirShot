@@ -1,6 +1,6 @@
-# AirShot: Efficient Few-Shot Detection for Autonomous Exploration 
+# AirShot: Efficient Few-Shot Detection for Autonomous Exploration (IROS 2024)
 
-#### IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS2024)
+#### IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2024)
 #### Zihan Wang, Bowen Li, Chen Wang, and Sebastian Scherer*
 
 ## Abstract
