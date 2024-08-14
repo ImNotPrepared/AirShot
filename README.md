@@ -9,8 +9,9 @@ Few-shot object detection has drawn increasing attention in the field of robotic
 ## TODO
 - [x] Release SubT Dataset
 - [x] Release Pre-trained Checkpoints
+- [x] Release Code
 - [ ] Prepare Website w/ Videos
-- [ ] Release Code(Coming in May...)
+
 
 ## DARPA Subterranean (SubT) Dataset for Few-shot Object Detection
 Access the data and annotations through the following link:
@@ -79,10 +80,39 @@ bash generate_support_data.sh
 You may modify 4_gen_support_pool_10_shot.py line 190, 213, and 269 with different shots (default is 1 shot).
 
 
-
-
-
 ## Usage
 
-Detailed instructions on how to use AirShot, including command line options and example commands.
+### Base training
+
+Download base [R-101 model](https://dl.fbaipublicfiles.com/detectron2/ImageNetPretrained/MSRA/R-101.pkl) in /output
+
+start training
+
+```shell
+bash train.sh
+```
+
+It necessarily run 2 stages containing base training and further fine-tuning, different config files are loaded. 
+
+### Inference w/o fine-tuning
+
+```shell
+bash test.sh
+```
+
+### Warning 
+This code is a pre-release, if you find any problem(s), email or issues are welcomed 
+
+## Citation
+If our work motivates/helps your work, please cite us as:
+```
+@inproceedings{wang2024airshot,
+  title = {{AirShot}: Efficient Few-Shot Detection for Autonomous Exploration},
+  author = {Wang, Zihan and Li, Bowen and Wang, Chen and Scherer, Sebastian},
+  booktitle = {IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  year = {2024},
+  url = {https://arxiv.org/pdf/2404.05069.pdf}
+}
+```
+
 
