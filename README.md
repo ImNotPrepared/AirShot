@@ -101,10 +101,10 @@ bash test.sh
 ```
 
 ### Warning 
-This code is a pre-release, if you find any problem(s), email or issues are welcomed 
+This code is a pre-release, changes are made for modularization purpose thus not verified yet. (Will fix once I am free) If you find any problem(s), email or issues are welcomed.
 
 ## Citation
-If our work motivates/helps your work, please cite us as:
+If AirShot motivates your work or used as baseline, please consider citing us as:
 ```
 @inproceedings{wang2024airshot,
   title = {{AirShot}: Efficient Few-Shot Detection for Autonomous Exploration},
