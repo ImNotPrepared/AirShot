@@ -1,16 +1,24 @@
 # AirShot: Efficient Few-Shot Detection for Autonomous Exploration (IROS 2024)
 
-#### IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS 2024)
-#### Zihan Wang, Bowen Li, Chen Wang, and Sebastian Scherer*
+#### 2024 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)
+#### Zihan Wang, Bowen Li, Chen Wang, and Sebastian Scherer
 
-## Abstract
+[Paper](https://doi.org/10.1109/IROS58592.2024.10801738) | [arXiv](https://arxiv.org/abs/2404.05069) | [Project page](https://z1hanw.github.io/research/IROS24_AirShot/)
+
+## Research overview
+
+AirShot detects novel objects from a few annotated support images without novel-class fine-tuning at deployment. Its Top Prediction Filter (TPF) learns from query-support correlation maps and selects likely classes to reduce class-wise inference loops. The method is evaluated on COCO, Pascal VOC and the DARPA SubT setting. Offline base training is required, and the class-selection setting controls the accuracy-latency tradeoff.
+
+Table IV reports 0.733 s for full-loop inference, 0.392 s for COCO with TPF + Top 10, and 0.386 s for VOC with TPF + Top 10. These are inference times, not FLOP counts. The experimental setup reports four NVIDIA A100 GPUs; the Jetson AGX Xavier SubT demonstration is separate. See [Table IV](https://arxiv.org/html/2404.05069v1#S4.T4) for the accuracy tradeoff. Gains diminish when most candidate classes occur in the query image.
+
+## Original paper abstract
 Few-shot object detection has drawn increasing attention in the field of robotic exploration, where robots are required to find unseen objects with a few online provided examples. Despite recent efforts have been made to yield online processing capabilities, slow inference speeds of low-powered robots fail to meet the demands of real-time detection-making them impractical for autonomous exploration. Existing methods still face performance and efficiency challenges, mainly due to unreliable features and exhaustive class loops. In this work, we propose a new paradigm AirShot, and discover that, by fully exploiting the valuable correlation map, AirShot can result in a more robust and faster few-shot object detection system, which is more applicable to robotics community. The core module Top Prediction Filter (TPF) can operate on multi-scale correlation maps in both the training and inference stages. During training, TPF supervises the generation of a more representative correlation map, while during inference, it reduces looping iterations by selecting top-ranked classes, thus cutting down on computational costs with better performance. Surprisingly, this dual functionality exhibits general effectiveness and efficiency on various off-the-shelf models. Exhaustive experiments on COCO2017, VOC2014, and SubT datasets demonstrate that TPF can significantly boost the efficacy and efficiency of most off-the-shelf models, achieving up to 36.4\% precision improvements along with 56.3\% faster inference speed. We also opensource the DARPA Subterranean (SubT) Dataset for Few-shot Object Detection.
 
 ## TODO
 - [x] Release SubT Dataset
 - [x] Release Pre-trained Checkpoints
 - [x] Release Code
-- [ ] Prepare Website w/ Videos
+- [x] Prepare Website w/ Videos
 
 
 ## DARPA Subterranean (SubT) Dataset for Few-shot Object Detection
@@ -105,13 +113,14 @@ This code is a pre-release, changes are made for modularization purpose thus not
 
 ## Citation
 If AirShot motivates your work or used as baseline, please consider citing us as:
-```
+```bibtex
 @inproceedings{wang2024airshot,
-  title = {{AirShot}: Efficient Few-Shot Detection for Autonomous Exploration},
-  author = {Wang, Zihan and Li, Bowen and Wang, Chen and Scherer, Sebastian},
-  booktitle = {IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
-  year = {2024},
-  url = {https://arxiv.org/pdf/2404.05069.pdf}
+  title={AirShot: Efficient few-shot detection for autonomous exploration},
+  author={Wang, Zihan and Li, Bowen and Wang, Chen and Scherer, Sebastian},
+  booktitle={2024 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
+  pages={11654--11661},
+  year={2024},
+  organization={IEEE}
 }
 ```
 
